@@ -1,0 +1,23 @@
+type Mutation {
+  tweet(text: String!, userId: ID!): Tweet!
+  newAuthor(name: String!, username: String!) : User!
+}
+
+type Query {
+  tweets: [Tweet!]!
+  user(username: String!): User
+  findbytag(tagname: String!):[Tweet]
+}
+
+type Tweet {
+  id: ID!
+  text: String!
+  author: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  username: String!
+  tweets: [Tweet!]!
+}
